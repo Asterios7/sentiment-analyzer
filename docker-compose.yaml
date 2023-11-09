@@ -8,5 +8,11 @@ services:
       dockerfile: Dockerfile
     container_name: fastapi-app
     image: theydo
+    env_file:
+      - .env
     ports:
       - 8000:8000
+    volumes:
+      - type: bind
+        source: ./app
+        target: /app
