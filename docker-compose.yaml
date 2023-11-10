@@ -4,8 +4,8 @@ services:
   fastapi-app:
     restart: unless-stopped
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ./api
+      dockerfile: Dockerfile.fastapi
     container_name: fastapi-app
     image: theydo
     env_file:
@@ -14,5 +14,18 @@ services:
       - 8000:8000
     volumes:
       - type: bind
-        source: ./app
+        source: ./api
+        target: /app
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.streamlit
+    container_name: st-app
+    environment:
+      IP_ADDRESS: "fastapi-app:8000"
+    ports:
+      - 8501:8501
+    volumes:
+      - type: bind
+        source: ./frontend
         target: /app
