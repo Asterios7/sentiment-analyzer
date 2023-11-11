@@ -1,2 +1,2 @@
 # assignment-theydo
-Building an LLM Fastapi for Theydo
+A movie sentiment analysis app with Fastapi and Streamlit
