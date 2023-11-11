@@ -25,11 +25,11 @@ def main():
     st.write("Enter your movie review below:")
 
     # Create text area
-    user_input = st.text_area("")
+    user_input = st.text_area("Enter your movie review here: ")
 
     # Button (sends to api)
     if st.button("Analyze Sentiment"):
-        if user_input == "":
+        if user_input.isspace() or user_input == "":
             st.warning("Please enter a movie review.")
         else:
             sentiment_result = analyze_sentiment(user_input)
