@@ -14,7 +14,7 @@ class reviewClassifierOut(BaseModel):
 
 @app.get('/')
 async def get_root():
-    return "Welcome to the new TheyDo API!!!"
+    return "Welcome to my Movie Sentiment Analysis API!!!"
 
 
 @app.post('/predict', response_model=reviewClassifierOut)

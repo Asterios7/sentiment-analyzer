@@ -26,7 +26,7 @@ def review_classifier_gpt35(text: str) -> str:
                       max_tokens=1,
                       n=1,
                       stop=None,
-                      temperature=0)
+                      temperature=0.1)
 
     response_text = response.choices[0].message.content.strip().lower()
 
