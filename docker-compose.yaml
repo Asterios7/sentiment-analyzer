@@ -12,10 +12,10 @@ services:
       - .env
     ports:
       - 8000:8000
-    volumes:
-      - type: bind
-        source: ./api
-        target: /app
+    # volumes:
+    #   - type: bind
+    #     source: ./api
+    #     target: /app
   frontend:
     restart: unless-stopped
     build:
@@ -27,7 +27,7 @@ services:
       IP_ADDRESS: "fastapi-app:8000"
     ports:
       - 8501:8501
-    volumes:
-      - type: bind
-        source: ./frontend
-        target: /app
+    # volumes:
+    #   - type: bind
+    #     source: ./frontend
+    #     target: /app
