@@ -7,7 +7,7 @@ services:
       context: ./api
       dockerfile: Dockerfile.fastapi
     container_name: fastapi-app
-    image: theydo
+    image: sentiment-analysis-api
     env_file:
       - .env
     ports:
@@ -17,10 +17,12 @@ services:
         source: ./api
         target: /app
   frontend:
+    restart: unless-stopped
     build:
       context: ./frontend
       dockerfile: Dockerfile.streamlit
     container_name: st-app
+    image: streamlit-frontend
     environment:
       IP_ADDRESS: "fastapi-app:8000"
     ports:
