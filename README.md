@@ -19,7 +19,7 @@ This repository contains:
 
 - Docker
 
-**How to start the app***
+**How to start the app**
 
 After you clone this repository:
 
