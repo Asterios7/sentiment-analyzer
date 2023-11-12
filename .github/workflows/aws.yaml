@@ -23,4 +23,4 @@ jobs:
             git clone https://github.com/Asterios7/sentiment-analyzer.git
             cd sentiment-analyzer
             # echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> .env
-            sudo docker-compose up -d --build
+            sudo docker compose up -d --build
