@@ -15,11 +15,11 @@ This repository contains:
 
 ## App<a id="app"></a>
 
-#### System requirements
+**System requirements**
 
 - Docker
 
-#### How to start the app
+**How to start the app***
 
 After you clone this repository:
 
@@ -41,13 +41,13 @@ If you want to avoid all this trouble, the app is working on an aws instance at 
 
 ## Notebooks<a id="notebooks"></a>
 
-#### Install notebook requirements
+**Install notebook requirements**
 
 Go to sentiment-analyzer/notebooks and:
 
 `pip install -r requirements.txt`
 
-#### Available notebooks
+**Available notebooks**
 
 1. **sentiment_analysis.ipynb:** This notebook conducts sentiment analysis on movie reviews from the imdb dataset, utilizing the GPT-3.5-turbo model. It calculates and stores metrics like precision, recall, F1 score, and accuracy in **metrics_sentiment.json**.
 
