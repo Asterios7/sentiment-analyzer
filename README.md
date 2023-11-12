@@ -37,7 +37,7 @@ For stopping the app from the same terminal path execute:
 
 **OR**
 
-If you want avoid all this trouble, the app is working on an aws instance at [sentiment-analyzer](http://3.70.225.192:8501/)
+If you want to avoid all this trouble, the app is working on an aws instance at [sentiment-analyzer](http://3.70.225.192:8501/).
 
 ## Notebooks<a id="notebooks"></a>
 
