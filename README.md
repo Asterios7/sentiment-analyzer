@@ -15,7 +15,7 @@ This repository contains:
 
 ## App<a id="app"></a>
 
-#### System Requirements
+#### System requirements
 
 - Docker
 
@@ -37,16 +37,14 @@ For stopping the app from the same terminal path execute:
 
 ## Notebooks<a id="notebooks"></a>
 
-#### Install Notebook Requirements
+#### Install notebook requirements
 
 Go to sentiment-analyzer/notebooks and:
 
 `pip install -r requirements.txt`
 
-#### 
+#### Available notebooks
 
-1. **`sentiment_analysis.ipynb`** 
-    - This notebook conducts sentiment analysis on movie reviews from the imdb dataset, utilizing the GPT-3.5-turbo model. It calculates and stores metrics like precision, recall, F1 score, and accuracy in `metrics_sentiment.json`.
+1. **sentiment_analysis.ipynb:** This notebook conducts sentiment analysis on movie reviews from the imdb dataset, utilizing the GPT-3.5-turbo model. It calculates and stores metrics like precision, recall, F1 score, and accuracy in **metrics_sentiment.json**.
 
-2. **`out_of_distribution.ipynb`** 
-    - This notebook focuses on classifying whether a given text is a movie review or not using datasets from IMDB, Amazon Polarity, and Yelp Polarity datasets. The GPT-3.5-turbo model is employed for this classification task. The notebook calculates and stores metrics such as precision, recall, F1 score, and accuracy in `metrics_ood.json`.
+2. **out_of_distribution.ipynb:** This notebook focuses on classifying whether a given text is a movie review or not using datasets from IMDB, Amazon Polarity, and Yelp Polarity datasets. The GPT-3.5-turbo model is employed for this classification task. The notebook calculates and stores metrics such as precision, recall, F1 score, and accuracy in **metrics_ood.json**.
