@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ssh to ec2 and execute commands
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.AWS_HOST}}
+          username: ${{ secrets.AWS_USERNAME }}
+          key: ${{ secrets.AWS_KEY }}
+          script: |
+            rm -rf sentiment-analyzer
+            git clone https://github.com/Asterios7/sentiment-analyzer.git
+            cd sentiment-analyzer
+            # echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> .env
+            sudo docker-compose up -d --build
