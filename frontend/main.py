@@ -6,11 +6,10 @@ import os
 IP_ADDRESS = os.environ.get('IP_ADDRESS')
 
 
-def analyze_sentiment(text: str) -> dict:
+def analyze_sentiment(text: str) -> requests.models.Response:
     url = f'http://{IP_ADDRESS}/predict'
     data = {"text": text}
-    response = requests.post(url, json=data)
-    return response.json()
+    return requests.post(url, json=data)
 
 
 def main():
@@ -22,19 +21,25 @@ def main():
     )
 
     st.title("Movie Review Sentiment Analysis")
-    st.write("Enter your movie review below:")
 
-    # Create text area
+    # Create text area for review
     user_input = st.text_area("Enter your movie review here: ")
 
     # Button (sends to api)
     if st.button("Analyze Sentiment"):
+
         if user_input.isspace() or user_input == "":
             st.warning("Please enter a movie review.")
         else:
-            sentiment_result = analyze_sentiment(user_input)
-            st.write("Sentiment: ", f"**{sentiment_result['pred']}**" )
-    
+            response = analyze_sentiment(user_input)
+            if response.status_code == 200:
+                st.write("Review sentiment: ", f"**{response.json()['pred']}**" )
+            elif response.status_code == 422:
+                st.write(response.json()['detail'])
+            else:
+                st.write(response.json()['detail'])
+                st.write("Openai api error, please retry.")
+
 
 if __name__ == "__main__":
     main()
