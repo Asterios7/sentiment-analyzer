@@ -12,10 +12,10 @@ services:
       - .env
     ports:
       - 8000:8000
-    # volumes:
-    #   - type: bind
-    #     source: ./api
-    #     target: /app
+    volumes:
+      - type: bind
+        source: ./api
+        target: /app
   frontend:
     restart: unless-stopped
     build:
